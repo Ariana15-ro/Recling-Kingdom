@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c1ev18laf5kg4"]
+
+[ext_resource type="PackedScene" uid="uid://bpd28qo61rpd2" path="res://scenes/player/Player.tscn" id="1_jujyk"]
+[ext_resource type="PackedScene" uid="uid://bo03vkcdohy6k" path="res://scenes/rooms/polluted_zone.tscn" id="2_qqwko"]
+[ext_resource type="PackedScene" uid="uid://cn1habnlgcycd" path="res://scenes/items/watering_can_pickup.tscn" id="3_pub68"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gfjak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnide"]
+size = Vector2(164, 55.75)
+
+[node name="TestRoom" type="Node2D" unique_id=2013447258]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1830267721]
+position = Vector2(120, 70)
+physics_material_override = SubResource("PhysicsMaterial_gfjak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1815137324]
+position = Vector2(-27, 0.75)
+shape = SubResource("RectangleShape2D_nnide")
+debug_color = Color(0.6784314, 0.29803923, 1, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2" unique_id=2101409356]
+position = Vector2(186, 25)
+color = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-294, -50, -293, 3, -133, 1, -133, -43)
+uv = PackedVector2Array(-217, -39, -219, 14, -127, 11, -131, -41)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1780360559]
+position = Vector2(335, 230)
+physics_material_override = SubResource("PhysicsMaterial_gfjak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1647081393]
+position = Vector2(57, -62.125)
+shape = SubResource("RectangleShape2D_nnide")
+debug_color = Color(0.6784314, 0.29803923, 1, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D3" unique_id=299110534]
+position = Vector2(225, -44)
+color = Color(1.540184e-06, 0.9564342, 0.9761316, 1)
+polygon = PackedVector2Array(-251, -40, -250, 4, -82, 6, -84, -43)
+uv = PackedVector2Array(-217, -39, -219, 14, -127, 11, -131, -41)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=566338511]
+position = Vector2(207, 141)
+physics_material_override = SubResource("PhysicsMaterial_gfjak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=573073930]
+shape = SubResource("RectangleShape2D_nnide")
+debug_color = Color(0.6784314, 0.29803923, 1, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D4" unique_id=1474172704]
+position = Vector2(186, 25)
+color = Color(1, 0.8627451, 0.6509804, 1)
+polygon = PackedVector2Array(-266, -50, -271, -1, -102, 1, -104, -53)
+uv = PackedVector2Array(-217, -39, -219, 14, -127, 11, -131, -41)
+
+[node name="Node2D" parent="." unique_id=481005323 instance=ExtResource("1_jujyk")]
+position = Vector2(91, -113)
+
+[node name="PollutedZone" parent="." unique_id=938496978 instance=ExtResource("2_qqwko")]
+position = Vector2(-47, 10)
+
+[node name="WateringCanPickup" parent="." unique_id=178044490 instance=ExtResource("3_pub68")]
+position = Vector2(361, 132)
+rotation = 0.00046792254

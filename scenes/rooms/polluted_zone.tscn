@@ -48,3 +48,12 @@ gravity = Vector2(0, 120)
 initial_velocity_min = 60.0
 initial_velocity_max = 120.0
 color = Color(1.2513996e-06, 0.8143071, 0.52024984, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1789222300]
+visible = false
+offset_left = 632.0
+offset_top = 67.0
+offset_right = 799.0
+offset_bottom = 90.0
+text = "Necesitas la regadera"
+horizontal_alignment = 1

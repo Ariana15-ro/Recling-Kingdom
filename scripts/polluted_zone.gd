@@ -15,6 +15,9 @@ var is_restored: bool = false
 # Referencia a las partículas de restauración
 @onready var particles: CPUParticles2D = $CPUParticles2D
 
+# Referencia al mensaje de falta de la regadera
+@onready var hint_label: Label = $Label
+
 # Indica si el jugador está dentro del área de interacción
 var player_in_range: bool = false
 
@@ -36,6 +39,7 @@ func restore_zone() -> void:
 	tween.tween_property(polygon, "color", restored_color, 1.5)
 	particles.restart()
 	particles.emitting = true
+	hint_label.visible = false
 
 
 # Actualiza el color del Polygon2D según el estado actual
@@ -69,4 +73,6 @@ func _process(_delta: float) -> void:
 		if GameState.has_watering_can:
 			restore_zone()
 		else:
-			print("Necesitas la regadera para restaurar esto")
+			hint_label.visible = true
+			await get_tree().create_timer(2.0).timeout
+			hint_label.visible = false
