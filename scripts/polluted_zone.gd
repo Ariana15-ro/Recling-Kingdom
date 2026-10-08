@@ -12,6 +12,9 @@ var is_restored: bool = false
 # Referencia al Area2D hijo para detectar la presencia del jugador
 @onready var interaction_area: Area2D = $InteractionArea
 
+# Referencia a las partículas de restauración
+@onready var particles: CPUParticles2D = $CPUParticles2D
+
 # Indica si el jugador está dentro del área de interacción
 var player_in_range: bool = false
 
@@ -28,7 +31,11 @@ func _ready() -> void:
 # Método público para restaurar la zona: cambia el estado y el color visual
 func restore_zone() -> void:
 	is_restored = true
-	_update_polygon_color()
+	var polygon: Polygon2D = $Polygon2D
+	var tween := create_tween()
+	tween.tween_property(polygon, "color", restored_color, 1.5)
+	particles.restart()
+	particles.emitting = true
 
 
 # Actualiza el color del Polygon2D según el estado actual
@@ -55,7 +62,7 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 # Se ejecuta cada frame para detectar la pulsación de la tecla de interacción
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Si el jugador está en rango, la zona no está restaurada, y presiona interactuar
 	if player_in_range and not is_restored and Input.is_action_just_pressed("interact"):
 		# Verificar si el jugador tiene la regadera en el estado global
