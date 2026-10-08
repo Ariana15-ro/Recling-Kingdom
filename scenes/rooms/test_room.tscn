@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bpd28qo61rpd2" path="res://scenes/player/Player.tscn" id="1_mjm5x"]
 [ext_resource type="PackedScene" uid="uid://bo03vkcdohy6k" path="res://scenes/rooms/polluted_zone.tscn" id="2_fn815"]
+[ext_resource type="PackedScene" uid="uid://cn1habnlgcycd" path="res://scenes/items/watering_can_pickup.tscn" id="3_6vnwl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gfjak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnide"]
-size = Vector2(164, 52.5)
+size = Vector2(164, 55.75)
 
 [node name="TestRoom" type="Node2D" unique_id=2013447258]
 
@@ -30,7 +31,7 @@ position = Vector2(335, 230)
 physics_material_override = SubResource("PhysicsMaterial_gfjak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1647081393]
-position = Vector2(57, -60.5)
+position = Vector2(57, -62.125)
 shape = SubResource("RectangleShape2D_nnide")
 debug_color = Color(0.6784314, 0.29803923, 1, 1)
 
@@ -55,7 +56,11 @@ polygon = PackedVector2Array(-266, -50, -271, -1, -102, 1, -104, -53)
 uv = PackedVector2Array(-217, -39, -219, 14, -127, 11, -131, -41)
 
 [node name="Node2D" parent="." unique_id=481005323 instance=ExtResource("1_mjm5x")]
-position = Vector2(131, 41)
+position = Vector2(91, -113)
 
 [node name="PollutedZone" parent="." unique_id=938496978 instance=ExtResource("2_fn815")]
-position = Vector2(225, 103)
+position = Vector2(-47, 10)
+
+[node name="WateringCanPickup" parent="." unique_id=178044490 instance=ExtResource("3_6vnwl")]
+position = Vector2(361, 132)
+rotation = 0.00046792254

@@ -1,19 +1,36 @@
 [gd_scene format=3 uid="uid://bo03vkcdohy6k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bqn6"]
-size = Vector2(257, 40)
+[ext_resource type="Script" uid="uid://by715sue2f7ha" path="res://scripts/polluted_zone.gd" id="1_rassq"]
 
-[node name="PollutedZone" type="Node2D" unique_id=938496978 groups=["player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bqn6"]
+size = Vector2(252, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5sygc"]
+size = Vector2(257.5, 53)
+
+[node name="PollutedZone" type="Node2D" unique_id=938496978]
+script = ExtResource("1_rassq")
+polluted_color = Color(0.74509805, 0.74509805, 0.74509805, 0.4392157)
+restored_color = Color(0, 1, 0, 0.4627451)
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1319889878]
-position = Vector2(272, 46)
-color = Color(0.67058825, 0.7176471, 0.68235296, 0.3137255)
-polygon = PackedVector2Array(-188, -88, -188, 64, 70, 66, 69, -90)
-uv = PackedVector2Array(-186, -61, -188, 64, 59, 64, 56, -56)
+position = Vector2(779.2741, 30.744186)
+scale = Vector2(0.996139, 2.8372092)
+color = Color(0.99607843, 0.49019608, 0.1882353, 0.13333334)
+polygon = PackedVector2Array(-186, 23, -188, 64, 70, 66, 71, 23)
+uv = PackedVector2Array(-192, 24, -188, 64, 59, 64, 56, 24)
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=160213733]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1038641766]
-position = Vector2(213, 59)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=303094704]
+position = Vector2(720, 154.5)
 shape = SubResource("RectangleShape2D_6bqn6")
-debug_color = Color(1, 0.67058825, 0.79607844, 0)
+debug_color = Color(0.99607843, 0.6862745, 0.7411765, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1694649746]
+position = Vector2(106, -96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=528144904]
+position = Vector2(618, 288)
+shape = SubResource("RectangleShape2D_5sygc")
+debug_color = Color(0.9490196, 0, 0.58431375, 0.95686275)

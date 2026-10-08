@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cn1habnlgcycd"]
+
+[ext_resource type="Script" uid="uid://71tm4xgy7bqy" path="res://scripts/watering_can_pickup.gd" id="1_rr0x1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bu3f"]
+size = Vector2(164, 52.5)
+
+[node name="WateringCanPickup" type="Area2D" unique_id=1046913780]
+rotation = 0.011295007
+script = ExtResource("1_rr0x1")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=79497710]
+position = Vector2(246.58289, 50.218117)
+rotation = 0.006698916
+color = Color(0.23210964, 0.6430787, 0.9999998, 1)
+polygon = PackedVector2Array(-294, -50, -293, 3, -133, 1, -133, -43)
+uv = PackedVector2Array(-217, -39, -219, 14, -127, 11, -131, -41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1444395429]
+position = Vector2(32.314243, 27.636774)
+shape = SubResource("RectangleShape2D_8bu3f")
+debug_color = Color(0.6784314, 0.29803923, 1, 1)
