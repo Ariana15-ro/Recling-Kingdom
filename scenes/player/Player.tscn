@@ -21,7 +21,10 @@ position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_6bqn6")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=808845750]
+position = Vector2(11, 50)
 ignore_rotation = false
 limit_enabled = false
+limit_left = 0
+limit_bottom = 700
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0

@@ -5,9 +5,15 @@ extends CharacterBody2D
 @export var jump_velocity: float = -400.0
 @export var coyote_time: float = 0.1
 @export var jump_buffer_time: float = 0.1
+@export var fall_limit_y: float = 900.0
 
 var coyote_timer: float = 0.0
 var jump_buffer_timer: float = 0.0
+var spawn_position: Vector2
+
+func _ready() -> void:
+	# Guardar la posición inicial global para reaparecer allí si cae.
+	spawn_position = global_position
 
 func _physics_process(delta: float) -> void:
 	# Gravedad
@@ -37,3 +43,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, acceleration * delta)
 
 	move_and_slide()
+
+	if global_position.y > fall_limit_y:
+		global_position = spawn_position
+		velocity = Vector2.ZERO

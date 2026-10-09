@@ -3,64 +3,118 @@
 [ext_resource type="PackedScene" uid="uid://bpd28qo61rpd2" path="res://scenes/player/Player.tscn" id="1_jujyk"]
 [ext_resource type="PackedScene" uid="uid://bo03vkcdohy6k" path="res://scenes/rooms/polluted_zone.tscn" id="2_qqwko"]
 [ext_resource type="PackedScene" uid="uid://cn1habnlgcycd" path="res://scenes/items/watering_can_pickup.tscn" id="3_pub68"]
+[ext_resource type="PackedScene" uid="uid://brk3g7e8wh4hj" path="res://scenes/rooms/plataform.tscn" id="4_qqwko"]
+[ext_resource type="PackedScene" uid="uid://dcu05urtfn308" path="res://scenes/rooms/plataforma_mini.tscn" id="5_pub68"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gfjak"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnide"]
-size = Vector2(164, 55.75)
-
-[node name="TestRoom" type="Node2D" unique_id=2013447258]
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1830267721]
-position = Vector2(120, 70)
-physics_material_override = SubResource("PhysicsMaterial_gfjak")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1815137324]
-position = Vector2(-27, 0.75)
-shape = SubResource("RectangleShape2D_nnide")
-debug_color = Color(0.6784314, 0.29803923, 1, 1)
-
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2" unique_id=2101409356]
-position = Vector2(186, 25)
-color = Color(1, 0, 1, 1)
-polygon = PackedVector2Array(-294, -50, -293, 3, -133, 1, -133, -43)
-uv = PackedVector2Array(-217, -39, -219, 14, -127, 11, -131, -41)
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1780360559]
-position = Vector2(335, 230)
-physics_material_override = SubResource("PhysicsMaterial_gfjak")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1647081393]
-position = Vector2(57, -62.125)
-shape = SubResource("RectangleShape2D_nnide")
-debug_color = Color(0.6784314, 0.29803923, 1, 1)
-
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D3" unique_id=299110534]
-position = Vector2(225, -44)
-color = Color(1.540184e-06, 0.9564342, 0.9761316, 1)
-polygon = PackedVector2Array(-251, -40, -250, 4, -82, 6, -84, -43)
-uv = PackedVector2Array(-217, -39, -219, 14, -127, 11, -131, -41)
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=566338511]
-position = Vector2(207, 141)
-physics_material_override = SubResource("PhysicsMaterial_gfjak")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=573073930]
-shape = SubResource("RectangleShape2D_nnide")
-debug_color = Color(0.6784314, 0.29803923, 1, 1)
-
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D4" unique_id=1474172704]
-position = Vector2(186, 25)
-color = Color(1, 0.8627451, 0.6509804, 1)
-polygon = PackedVector2Array(-266, -50, -271, -1, -102, 1, -104, -53)
-uv = PackedVector2Array(-217, -39, -219, 14, -127, 11, -131, -41)
-
-[node name="Node2D" parent="." unique_id=481005323 instance=ExtResource("1_jujyk")]
-position = Vector2(91, -113)
+[node name="Leverl_1" type="Node2D" unique_id=2013447258]
 
 [node name="PollutedZone" parent="." unique_id=938496978 instance=ExtResource("2_qqwko")]
-position = Vector2(-47, 10)
+position = Vector2(820, 149)
+
+[node name="PollutedZone2" parent="." unique_id=1188844383 instance=ExtResource("2_qqwko")]
+position = Vector2(1945, 149)
+
+[node name="PollutedZone3" parent="." unique_id=738496462 instance=ExtResource("2_qqwko")]
+position = Vector2(602, 572)
 
 [node name="WateringCanPickup" parent="." unique_id=178044490 instance=ExtResource("3_pub68")]
-position = Vector2(361, 132)
+position = Vector2(396, 352)
 rotation = 0.00046792254
+
+[node name="Node2D" parent="." unique_id=481005323 instance=ExtResource("1_jujyk")]
+position = Vector2(96, 440)
+
+[node name="Plataform" parent="." unique_id=2093002216 instance=ExtResource("4_qqwko")]
+position = Vector2(0, 480)
+
+[node name="Plataform2" parent="." unique_id=1239411352 instance=ExtResource("4_qqwko")]
+position = Vector2(128, 480)
+
+[node name="Plataform3" parent="." unique_id=46504511 instance=ExtResource("4_qqwko")]
+position = Vector2(256, 480)
+
+[node name="Plataform4" parent="." unique_id=1342941755 instance=ExtResource("4_qqwko")]
+position = Vector2(384, 480)
+
+[node name="Plataform5" parent="." unique_id=1829040257 instance=ExtResource("4_qqwko")]
+position = Vector2(512, 480)
+
+[node name="Plataform6" parent="." unique_id=1209636035 instance=ExtResource("4_qqwko")]
+position = Vector2(640, 480)
+
+[node name="Escalon" parent="." unique_id=1963234520 instance=ExtResource("4_qqwko")]
+position = Vector2(832, 448)
+
+[node name="Escalon2" parent="." unique_id=790211610 instance=ExtResource("4_qqwko")]
+position = Vector2(960, 416)
+
+[node name="Escalon3" parent="." unique_id=1459967779 instance=ExtResource("4_qqwko")]
+position = Vector2(1088, 384)
+
+[node name="Escalon4" parent="." unique_id=1933177406 instance=ExtResource("4_qqwko")]
+position = Vector2(1216, 352)
+
+[node name="Escalon5" parent="." unique_id=1281618284 instance=ExtResource("4_qqwko")]
+position = Vector2(1718, 352)
+
+[node name="Escalon6" parent="." unique_id=1536795598 instance=ExtResource("4_qqwko")]
+position = Vector2(1846, 352)
+
+[node name="Escalon8" parent="." unique_id=688826006 instance=ExtResource("4_qqwko")]
+position = Vector2(1900, 739)
+
+[node name="Escalon10" parent="." unique_id=235534758 instance=ExtResource("4_qqwko")]
+position = Vector2(2011, 678)
+
+[node name="Escalon11" parent="." unique_id=1098543274 instance=ExtResource("4_qqwko")]
+position = Vector2(2108, 622)
+
+[node name="Escalon12" parent="." unique_id=971925632 instance=ExtResource("4_qqwko")]
+position = Vector2(2197, 562)
+
+[node name="Escalon13" parent="." unique_id=272292980 instance=ExtResource("4_qqwko")]
+position = Vector2(2285, 490)
+
+[node name="Escalon14" parent="." unique_id=564801078 instance=ExtResource("4_qqwko")]
+position = Vector2(2376, 430)
+
+[node name="Escalon19" parent="." unique_id=1007836634 instance=ExtResource("4_qqwko")]
+position = Vector2(3156, 307)
+
+[node name="Escalon20" parent="." unique_id=1880966217 instance=ExtResource("4_qqwko")]
+position = Vector2(3245, 247)
+
+[node name="Escalon21" parent="." unique_id=740009680 instance=ExtResource("4_qqwko")]
+position = Vector2(3333, 175)
+
+[node name="Escalon22" parent="." unique_id=121932848 instance=ExtResource("4_qqwko")]
+position = Vector2(3424, 115)
+
+[node name="Escalon23" parent="." unique_id=1287019107 instance=ExtResource("4_qqwko")]
+position = Vector2(3554, 115)
+
+[node name="Escalon9" parent="." unique_id=40413284 instance=ExtResource("4_qqwko")]
+position = Vector2(2244, 352)
+
+[node name="Escalon15" parent="." unique_id=638143023 instance=ExtResource("4_qqwko")]
+position = Vector2(2888, 352)
+
+[node name="Escalon16" parent="." unique_id=858643400 instance=ExtResource("4_qqwko")]
+position = Vector2(3012, 352)
+
+[node name="Escalon7" parent="." unique_id=593614828 instance=ExtResource("4_qqwko")]
+position = Vector2(2029, 353)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Escalon7" unique_id=1019585885]
+position = Vector2(28, 19.000015)
+scale = Vector2(1, 0.5714286)
+color = Color(0.8293233, 0.44765526, 0, 1)
+offset = Vector2(79, 21)
+polygon = PackedVector2Array(-16, -48, -16, -48, -144, -48, -144, 8, -17, 7)
+uv = PackedVector2Array(-16, -48, -16, -48, -144, -48, -144, 8, -17, 7)
+
+[node name="Plataforma_mini" parent="." unique_id=1872828355 instance=ExtResource("5_pub68")]
+position = Vector2(1701, 727)
+
+[node name="Plataforma_mini2" parent="." unique_id=342487737 instance=ExtResource("5_pub68")]
+position = Vector2(1523, 727)
